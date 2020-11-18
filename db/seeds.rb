@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user=User.first 
+20.times do
+  Book.create(user: user, title: Faker::Book.title, description: Faker::Book.genre, price: Faker::Number.between(from: 3000, to: 35000), status: %w[available reserved buyed].sample)
+end
