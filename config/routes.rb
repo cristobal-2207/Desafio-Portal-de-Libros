@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :books
+  resources :books do
+    collection do
+      get :petition
+    end
+  end
   root 'users#profile'
   resources :users, only: [] do
     collection do
