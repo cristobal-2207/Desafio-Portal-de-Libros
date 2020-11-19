@@ -11,8 +11,7 @@ function createPetition(){
     url: '/books',
     data: {
       book: {
-        title: $('input[name="book[title]"').val(),
-        status: "requested"
+        title: $('input[name="book[title]"').val(), status: "requested"
       }
     },
     success: function(result) {

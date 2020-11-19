@@ -1,4 +1,4 @@
 class Book < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   enum status: [:available, :reserved, :buyed, :requested]
 end

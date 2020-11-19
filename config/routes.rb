@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   root 'users#profile'
   resources :users, only: [] do
     collection do
+      get :buyed_books
+      post :buy_books
       get :profile
       put '/:book_id/release', to: 'users#release', as: 'release'
+      get :availables
     end
   end
   devise_for :users

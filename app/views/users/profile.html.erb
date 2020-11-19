@@ -1,6 +1,7 @@
 <h1>Users#profile</h1>
 <p>Find me in app/views/users/profile.html.erb</p>
-<table>
+<%= link_to 'Comprar Libro', buyed_books_users_path, class: "btn btn-primary m-3" %>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -22,7 +23,7 @@
         <td><%= book.user_id %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Liberar', release_users_path(book), method: :put %></td>
+        <td><%= link_to 'Liberar', release_users_path(book_id: book.id, status: :available), method: :put %></td>
       </tr>
     <% end %>
   </tbody>
